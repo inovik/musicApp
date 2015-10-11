@@ -2,8 +2,8 @@
 # platform :ios, '6.0'
 
 target 'MuzOn' do
-    #pod 'VK-ios-sdk'
-    #pod 'FastEasyMapping'
+    pod 'VK-ios-sdk'
+    pod 'FastEasyMapping'
 end
 
 target 'MuzOnTests' do
