@@ -8,6 +8,9 @@
 
 #import "INVAudioListModel.h"
 #import "INVVKManager.h"
+#import "INVAudioListCellModel.h"
+#import "VKAudio.h"
+
 
 @implementation INVAudioListModel
 
@@ -17,8 +20,17 @@
 -(void)loadAudioList{
     [VKManager getUserAuidioWithSuccesBlock:^(NSDictionary *response) {
         if (response) {
-            self.itemsCount = [response[@"items"] count];
-            self.modelData = [NSArray arrayWithArray:response[@"items"]];
+            NSInteger itemsCount = [response[@"items"] count];
+            NSMutableArray *cellModelsArray = [@[] mutableCopy];
+            
+            for (NSInteger i = 0; i < itemsCount; i++) {
+                VKAudio *audio = [[VKAudio alloc] initWithDictionary:response[@"items"][i]];
+                INVAudioListCellModel *cellModel = [[INVAudioListCellModel alloc] initWithVKAudio:audio];
+                [cellModelsArray addObject:cellModel];
+            }
+            
+            self.itemsCount = itemsCount;
+            self.modelData = [NSArray arrayWithArray:cellModelsArray];
         }
     }];
 }

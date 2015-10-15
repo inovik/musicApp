@@ -68,6 +68,7 @@
                                         <connections>
                                             <outlet property="durationAudioLabel" destination="W5U-Zv-7OR" id="72n-ls-ktg"/>
                                             <outlet property="titleAudioLabel" destination="gNJ-3J-BLK" id="8vM-rp-oOc"/>
+                                            <segue destination="bEk-D0-RzV" kind="show" id="rJ4-Rq-N3n"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -110,6 +111,82 @@
             </objects>
             <point key="canvasLocation" x="719" y="140"/>
         </scene>
+        <!--Audio SingleVC-->
+        <scene sceneID="uGt-Xj-0rw">
+            <objects>
+                <viewController id="bEk-D0-RzV" customClass="INVAudioSingleVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hph-Qu-64t"/>
+                        <viewControllerLayoutGuide type="bottom" id="ufb-2S-qeG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SZY-Xe-Bqd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ue-wU-RPG">
+                                <rect key="frame" x="20" y="92" width="280" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ki-mV-al2">
+                                <rect key="frame" x="20" y="144" width="275" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7z-fg-5SI">
+                                <rect key="frame" x="229" y="495" width="46" height="30"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="bEk-D0-RzV" eventType="touchUpInside" id="TRe-hd-rwF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-QS-BWs">
+                                <rect key="frame" x="41" y="495" width="46" height="30"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="prewButtonTapped:" destination="bEk-D0-RzV" eventType="touchUpInside" id="rjW-nK-xgc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teu-PK-Xxe">
+                                <rect key="frame" x="126" y="495" width="63" height="30"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" title="PAUSE"/>
+                                <state key="selected" title="PAUSE"/>
+                                <state key="highlighted" title="PLAY"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="bEk-D0-RzV" eventType="touchUpInside" id="1Pq-zD-iut"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hl-oB-iQi">
+                                <rect key="frame" x="20" y="197" width="46" height="30"/>
+                                <state key="normal" title="save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="bEk-D0-RzV" eventType="touchUpInside" id="VGi-U4-hup"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="TitleLabel" destination="8Ue-wU-RPG" id="Mfn-hc-p3U"/>
+                        <outlet property="artistLabel" destination="5ki-mV-al2" id="bvR-bk-p5a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NML-Sx-Li4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="145"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ECE-aY-TES">
             <objects>
@@ -128,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="-217" y="132"/>
         </scene>
-        <!--Menu Screen-->
+        <!--Меню-->
         <scene sceneID="BuP-mP-MiI">
             <objects>
-                <viewController id="oRg-GY-imG" customClass="INVMenuScreen" sceneMemberID="viewController">
+                <viewController title="Меню" id="oRg-GY-imG" customClass="INVMenuScreen" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bx4-vA-ArT"/>
                         <viewControllerLayoutGuide type="bottom" id="qGs-xn-oL7"/>
@@ -140,12 +217,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9Q-Bv-snf">
-                                <rect key="frame" x="214" y="264" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9Q-Bv-snf">
+                                <rect key="frame" x="60" y="93" width="200" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Мои аудио">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="czA-dA-kcq" kind="show" id="hWz-LN-2FL"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oL9-tf-Bz8">
+                                <rect key="frame" x="60" y="147" width="200" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="ЗАГРУЗКИ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

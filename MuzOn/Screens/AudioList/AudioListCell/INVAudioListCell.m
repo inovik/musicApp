@@ -7,11 +7,11 @@
 //
 
 #import "INVAudioListCell.h"
-#import "INVAudioListCellModel.h"
 
 @interface INVAudioListCell ()
 
-@property (strong, nonatomic) INVAudioListCellModel * model;
+@property (weak, nonatomic) IBOutlet UILabel *titleAudioLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationAudioLabel;
 
 @end
 
@@ -20,11 +20,11 @@
 @synthesize durationAudioLabel = _durationAudioLabel;
 @synthesize titleAudioLabel = _titleAudioLabel;
 
--(void)configureCellWithDictionary:(NSDictionary *)cellProperties{
-    self.model = [[INVAudioListCellModel alloc] initWithDictionary:cellProperties];
+-(void)configureCellWithModel:(INVAudioListCellModel *)model{
+    self.model = model;
     if (_model) {
         _durationAudioLabel.text = self.model.duration;
-        [_titleAudioLabel setText: self.model.titleAudio];
+        [_titleAudioLabel setText: [NSString stringWithFormat:@"%@ - %@", self.model.artist, self.model.titleAudio]];
     }
     
 }

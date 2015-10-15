@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class INVAudioSingleModel;
+
 #define CoreDataManager [CoreDataService sharedInstance]
 
 @interface CoreDataService : NSObject <NSFetchedResultsControllerDelegate>
@@ -16,8 +18,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-
 
 +(instancetype) sharedInstance;
 // следующие объявления сгенерируют compile time ошибки при попытке их вызвать вручную.
@@ -27,6 +27,7 @@
 +(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
 
 - (NSArray *)loadAudio;
+- (void)saveNewAudio:(INVAudioSingleModel *)model;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

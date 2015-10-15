@@ -52,14 +52,13 @@ NSString *const kVKAppID = @"5081233";
 }
 
 -(BOOL)isLoginned{
-    NSLog(@"%d", [VKSdk wakeUpSession]);
     return [VKSdk wakeUpSession];
 }
 
--(void)getUserAuidioWithSuccesBlock:(void(^)(VKResponse *))succesBlock{    
+-(void)getUserAuidioWithSuccesBlock:(void(^)(NSDictionary *))succesBlock{
     VKRequest *audioRequest2 = [VKApi requestWithMethod:@"audio.get" andParameters:nil andHttpMethod:@"GET"];
     [audioRequest2 executeWithResultBlock:^(VKResponse *response) {
-        succesBlock(response);
+        succesBlock(response.json);
     } errorBlock:^(NSError *error) {
         NSLog(@"");
     }];

@@ -26,5 +26,5 @@ extern NSString *const kVKAppID;
 +(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
 
 -(void)autorizateVKSDK;
--(void)getUserAuidioWithSuccesBlock:(void(^)(VKResponse *))succesBlock;
+-(void)getUserAuidioWithSuccesBlock:(void(^)(NSDictionary *))succesBlock;
 @end

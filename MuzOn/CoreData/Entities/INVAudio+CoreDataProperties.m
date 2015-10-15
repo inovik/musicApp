@@ -14,12 +14,12 @@
 @implementation INVAudio (CoreDataProperties)
 
 @dynamic artist;
-@dynamic titleAudio;
+@dynamic audioID;
 @dynamic dateAudio;
 @dynamic duration;
 @dynamic genreID;
 @dynamic ownerID;
+@dynamic titleAudio;
 @dynamic urlFIle;
-@dynamic audioID;
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "INVAudioListCellModel.h"
 
 @interface INVAudioListCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleAudioLabel;
-@property (weak, nonatomic) IBOutlet UILabel *durationAudioLabel;
+@property (strong, nonatomic) INVAudioListCellModel * model;
 
--(void)configureCellWithDictionary:(NSDictionary *)cellProperties;
+
+-(void)configureCellWithModel:(INVAudioListCellModel *)model;
 
 @end

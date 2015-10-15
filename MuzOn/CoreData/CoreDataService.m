@@ -8,6 +8,8 @@
 
 #import "CoreDataService.h"
 #import "AppDelegate.h"
+#import "INVAudio+CoreDataProperties.h"
+#import "INVAudioSingleModel.h"
 
 @implementation CoreDataService
 
@@ -33,9 +35,34 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:teamEntity];
     
-    NSArray *categories = [context executeFetchRequest:fetchRequest error:nil];
+    NSArray *audios = [context executeFetchRequest:fetchRequest error:nil];
     
-    return categories;
+    return audios;
+}
+
+
+- (void)saveNewAudio:(INVAudioSingleModel *)model{
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"INVAudio" inManagedObjectContext:self.managedObjectContext];
+    
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:self.managedObjectContext];
+    
+    // If appropriate, configure the new managed object.
+    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    [newManagedObject setValue:model.titleAudio forKey:@"titleAudio"];
+    [newManagedObject setValue:model.artistAudio forKey:@"artist"];
+    [newManagedObject setValue:[model.urlString absoluteString] forKey:@"urlFIle"];
+
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+//    [self loadAudio];
 }
 
 #pragma mark - Core Data stack

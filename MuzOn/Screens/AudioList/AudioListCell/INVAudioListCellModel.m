@@ -7,14 +7,17 @@
 //
 
 #import "INVAudioListCellModel.h"
+#import <VKAudio.h>
 
 @implementation INVAudioListCellModel
 
--(instancetype)initWithDictionary:(NSDictionary *)properties{
+-(instancetype)initWithVKAudio:(VKAudio *)audio{
     if (self == [super init]) {
-        if (properties) {
-            self.titleAudio = [NSString stringWithFormat:@"%@ - %@", properties[@"title"], properties[@"artist"]];
-            self.duration = [NSString stringWithFormat:@"%@", properties[@"duration"]];
+        if (audio) {
+            self.titleAudio = [NSString stringWithString: audio.title];
+            self.duration = [NSString stringWithFormat:@"%@", audio.duration];
+            self.urlAudio = [NSURL URLWithString:audio.url];
+            self.artist = [NSString stringWithString: audio.artist];
         }
     }
     return self;
