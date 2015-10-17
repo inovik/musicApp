@@ -10,6 +10,7 @@
 #import "INVVKManager.h"
 #import "INVAudioListCellModel.h"
 #import "VKAudio.h"
+#import "CoreDataService.h"
 
 
 @implementation INVAudioListModel
@@ -17,7 +18,7 @@
 @synthesize itemsCount = _itemsCount;
 @synthesize modelData = _modelData;
 
--(void)loadAudioList{
+-(void)loadAudioFromServer{
     [VKManager getUserAuidioWithSuccesBlock:^(NSDictionary *response) {
         if (response) {
             NSInteger itemsCount = [response[@"items"] count];
@@ -33,5 +34,15 @@
             self.modelData = [NSArray arrayWithArray:cellModelsArray];
         }
     }];
+}
+
+-(void)loadAudioFromDB{
+    NSArray *localData = [CoreDataManager loadAudioFromDB];
+//    for (NSInteger i = 0; i < [localData count]; i++) {
+//        INVAudio *audio = [inv]
+//        INVAudioListCellModel *cellModel = [[INVAudioListCellModel alloc] initWithVKAudio:audio];
+//        [cellModelsArray addObject:cellModel];
+//    }
+    NSLog(@"%@", localData);
 }
 @end

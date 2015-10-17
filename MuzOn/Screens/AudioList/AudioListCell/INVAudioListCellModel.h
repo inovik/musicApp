@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+@class INVAudio;
 @class VKAudio;
+
 
 @interface INVAudioListCellModel : NSObject
 
@@ -15,7 +17,9 @@
 @property(copy, nonatomic)      NSString *artist;
 @property(copy, nonatomic)      NSString *duration;
 @property(strong, nonatomic)    NSURL *urlAudio;
+@property(strong, nonatomic)    INVAudio *audioObject;
 
 -(instancetype)initWithVKAudio:(VKAudio *)audio;
+-(instancetype)initWithINVAudio:(INVAudio *)audio;
 
 @end

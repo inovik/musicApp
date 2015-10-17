@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, LoadingType) {
+    LoadingTypeFromServer,
+    LoadingTypeFromDB
+};
+
 @interface INVAudioListVC : UIViewController
-
-
+@property (assign, nonatomic) LoadingType type;
 
 @end

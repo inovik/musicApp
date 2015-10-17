@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EED4ADFD63EA1DE84642582 /* libPods-MuzOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F074AE7BF2E39347503C64F4 /* libPods-MuzOn.a */; };
+		7A1885D11BD29ACD007E7DF7 /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1885D01BD29ACD007E7DF7 /* StoryboardConstants.m */; settings = {ASSET_TAGS = (); }; };
 		7A2FFDAE1BCB2C5F0073283B /* INVAudioSingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FFDAD1BCB2C5F0073283B /* INVAudioSingleModel.m */; settings = {ASSET_TAGS = (); }; };
 		7A2FFDB11BCB2C930073283B /* INVAudioSingleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FFDB01BCB2C930073283B /* INVAudioSingleVC.m */; settings = {ASSET_TAGS = (); }; };
 		7ABC91A01BC9CE66004AFF01 /* INVAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC919F1BC9CE66004AFF01 /* INVAudioListCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -52,6 +53,9 @@
 /* Begin PBXFileReference section */
 		3F6694F02528D26EA01B41B4 /* Pods-MuzOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuzOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuzOn/Pods-MuzOn.release.xcconfig"; sourceTree = "<group>"; };
 		4B7FB4A977D298E5A6C65156 /* Pods-MuzOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuzOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuzOn/Pods-MuzOn.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1885CF1BD29ACD007E7DF7 /* StoryboardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryboardConstants.h; path = Resource/Constants/StoryboardConstants.h; sourceTree = "<group>"; };
+		7A1885D01BD29ACD007E7DF7 /* StoryboardConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryboardConstants.m; path = Resource/Constants/StoryboardConstants.m; sourceTree = "<group>"; };
+		7A1885D31BD29CF8007E7DF7 /* MuzOn.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuzOn.pch; sourceTree = "<group>"; };
 		7A2FFDAC1BCB2C5F0073283B /* INVAudioSingleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INVAudioSingleModel.h; path = Screens/AudioSingle/INVAudioSingleModel.h; sourceTree = "<group>"; };
 		7A2FFDAD1BCB2C5F0073283B /* INVAudioSingleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INVAudioSingleModel.m; path = Screens/AudioSingle/INVAudioSingleModel.m; sourceTree = "<group>"; };
 		7A2FFDAF1BCB2C930073283B /* INVAudioSingleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INVAudioSingleVC.h; path = Screens/AudioSingle/INVAudioSingleVC.h; sourceTree = "<group>"; };
@@ -133,6 +137,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7A1885CD1BD29A85007E7DF7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7A1885CE1BD29ABF007E7DF7 /* Constants */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		7A1885CE1BD29ABF007E7DF7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7A1885CF1BD29ACD007E7DF7 /* StoryboardConstants.h */,
+				7A1885D01BD29ACD007E7DF7 /* StoryboardConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		7A2FFDAB1BCB2B980073283B /* AudioSingleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +209,7 @@
 				7AD0E46F1BB376EB007B775B /* Assets.xcassets */,
 				7AD0E4711BB376EB007B775B /* LaunchScreen.storyboard */,
 				7AD0E4741BB376EB007B775B /* Info.plist */,
+				7A1885CD1BD29A85007E7DF7 /* Resource */,
 				7AD0E4601BB376EB007B775B /* Supporting Files */,
 			);
 			path = MuzOn;
@@ -197,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD0E4611BB376EB007B775B /* main.m */,
+				7A1885D31BD29CF8007E7DF7 /* MuzOn.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -475,6 +498,7 @@
 				7AD0E4621BB376EB007B775B /* main.m in Sources */,
 				7AD0E46E1BB376EB007B775B /* MuzOn.xcdatamodeld in Sources */,
 				7ACC3FE11BCA4EEC0009011F /* INVAudioService.m in Sources */,
+				7A1885D11BD29ACD007E7DF7 /* StoryboardConstants.m in Sources */,
 				7ABC91A01BC9CE66004AFF01 /* INVAudioListCell.m in Sources */,
 				7ABC91A31BC9CE85004AFF01 /* INVAudioListCellModel.m in Sources */,
 				7A2FFDB11BCB2C930073283B /* INVAudioSingleVC.m in Sources */,

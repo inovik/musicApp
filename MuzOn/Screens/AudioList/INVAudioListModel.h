@@ -13,6 +13,7 @@
 @property (assign, nonatomic) NSInteger itemsCount;
 @property (strong, nonatomic) NSArray *modelData;
 
--(void)loadAudioList;
+-(void)loadAudioFromServer;
+-(void)loadAudioFromDB;
 
 @end

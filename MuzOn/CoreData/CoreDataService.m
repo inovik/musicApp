@@ -27,13 +27,15 @@
 }
 
 
-- (NSArray *)loadAudio
+- (NSArray *)loadAudioFromDB
 {
     NSManagedObjectContext *context = [self managedObjectContext];
-    NSEntityDescription *teamEntity = [NSEntityDescription entityForName:@"INVAudio" inManagedObjectContext:context];
+    NSEntityDescription *audioEntity = [NSEntityDescription entityForName:@"INVAudio" inManagedObjectContext:context];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    [fetchRequest setEntity:teamEntity];
+    [fetchRequest setEntity:audioEntity];
+    [fetchRequest setFetchBatchSize:50];
+    [fetchRequest setResultType:NSDictionaryResultType];
     
     NSArray *audios = [context executeFetchRequest:fetchRequest error:nil];
     
@@ -51,7 +53,7 @@
     [newManagedObject setValue:model.titleAudio forKey:@"titleAudio"];
     [newManagedObject setValue:model.artistAudio forKey:@"artist"];
     [newManagedObject setValue:[model.urlString absoluteString] forKey:@"urlFIle"];
-
+    
     
     // Save the context.
     NSError *error = nil;

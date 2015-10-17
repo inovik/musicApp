@@ -8,6 +8,7 @@
 
 #import "INVAudioListCellModel.h"
 #import <VKAudio.h>
+#import "INVAudio.h"
 
 @implementation INVAudioListCellModel
 
@@ -18,6 +19,19 @@
             self.duration = [NSString stringWithFormat:@"%@", audio.duration];
             self.urlAudio = [NSURL URLWithString:audio.url];
             self.artist = [NSString stringWithString: audio.artist];
+        }
+    }
+    return self;
+}
+
+-(instancetype)initWithINVAudio:(INVAudio *)audio{
+    if (self == [super init]) {
+        if (audio) {
+            self.titleAudio = [NSString stringWithString: audio.titleAudio];
+            self.duration = [NSString stringWithFormat:@"%@", audio.duration];
+            self.urlAudio = [NSURL URLWithString:audio.urlFIle];
+            self.artist = [NSString stringWithString: audio.artist];
+            self.audioObject = audio;
         }
     }
     return self;

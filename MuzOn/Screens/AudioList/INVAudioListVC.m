@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     self.model = [[INVAudioListModel alloc] init];
-    [self.model loadAudioList];
+    [self.model loadAudioFromServer];
     
     [self.model addObserver:self forKeyPath:@"modelData" options:NSKeyValueObservingOptionNew context:nil];
 }

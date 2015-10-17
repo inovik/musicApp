@@ -9,6 +9,7 @@
 #import "INVMenuScreen.h"
 #import "INVVKManager.h"
 #import <VK-ios-sdk/VKResponse.h>
+//#import "invaudi"
 
 @interface INVMenuScreen()
 
@@ -21,6 +22,10 @@
     [super viewDidLoad];
     //need init viewController model
     [VKManager autorizateVKSDK];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"%@", segue.identifier);
 }
 
 
