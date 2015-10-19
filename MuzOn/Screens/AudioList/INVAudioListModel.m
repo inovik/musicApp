@@ -21,28 +21,39 @@
 -(void)loadAudioFromServer{
     [VKManager getUserAuidioWithSuccesBlock:^(NSDictionary *response) {
         if (response) {
-            NSInteger itemsCount = [response[@"items"] count];
-            NSMutableArray *cellModelsArray = [@[] mutableCopy];
+            NSArray *cellModelsArray = [self parseResponseHelper:response[@"items"] fromDB:NO];
             
-            for (NSInteger i = 0; i < itemsCount; i++) {
-                VKAudio *audio = [[VKAudio alloc] initWithDictionary:response[@"items"][i]];
-                INVAudioListCellModel *cellModel = [[INVAudioListCellModel alloc] initWithVKAudio:audio];
-                [cellModelsArray addObject:cellModel];
-            }
-            
-            self.itemsCount = itemsCount;
-            self.modelData = [NSArray arrayWithArray:cellModelsArray];
+            self.itemsCount = cellModelsArray.count;
+            self.modelData = cellModelsArray;
         }
     }];
 }
 
 -(void)loadAudioFromDB{
     NSArray *localData = [CoreDataManager loadAudioFromDB];
-//    for (NSInteger i = 0; i < [localData count]; i++) {
-//        INVAudio *audio = [inv]
-//        INVAudioListCellModel *cellModel = [[INVAudioListCellModel alloc] initWithVKAudio:audio];
-//        [cellModelsArray addObject:cellModel];
-//    }
-    NSLog(@"%@", localData);
+    NSArray *cellModelsArray = [self parseResponseHelper:localData fromDB:YES];
+    self.itemsCount = localData.count;
+    self.modelData = cellModelsArray;
 }
+
+- (NSArray *)parseResponseHelper:(NSArray *)response fromDB:(BOOL)fromDB{
+    NSMutableArray *cellModelsArray = [@[] mutableCopy];
+    
+    for (NSInteger i = 0; i < response.count; i++) {
+        id audio;
+        INVAudioListCellModel *cellModel;
+        if (!fromDB) {
+            audio = [[VKAudio alloc] initWithDictionary:response[i]];
+            cellModel = [[INVAudioListCellModel alloc] initWithVKAudio:audio];
+        }else{
+            audio = response[i];
+            cellModel = [[INVAudioListCellModel alloc] initWithINVAudio:audio];
+        }
+        
+        [cellModelsArray addObject:cellModel];
+    }
+    
+    return cellModelsArray;
+}
+
 @end

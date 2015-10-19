@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong, nonatomic) INVAudioListModel *model;
 
-@property(strong, nonatomic) AVPlayer *songPlayer;
-
 @end
 
 @implementation INVAudioListVC
@@ -30,29 +28,26 @@
 {
     [super viewDidLoad];
     self.model = [[INVAudioListModel alloc] init];
-    [self.model loadAudioFromServer];
+    [self loadAudios];
     
     [self.model addObserver:self forKeyPath:@"modelData" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void)loadAudios{
+    switch (self.loadingType) {
+        case LoadingTypeFromDB:
+            [self.model loadAudioFromDB];
+            break;
+            
+        case LoadingTypeFromServer:
+            [self.model loadAudioFromServer];
+            break;
+    }
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"modelData"]) {
         [self.tableView reloadData];
-    }
-    
-    if (object == self.songPlayer && [keyPath isEqualToString:@"status"]) {
-        if (self.songPlayer.status == AVPlayerStatusFailed) {
-            NSLog(@"AVPlayer Failed");
-            
-        } else if (self.songPlayer.status == AVPlayerStatusReadyToPlay) {
-            NSLog(@"AVPlayerStatusReadyToPlay");
-            [self.songPlayer play];
-            
-            
-        } else if (self.songPlayer.status == AVPlayerItemStatusUnknown) {
-            NSLog(@"AVPlayer Unknown");
-            
-        }
     }
 }
 
@@ -65,9 +60,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"INVAudioListCellID";
     
-    INVAudioListCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    INVAudioListCell *cell = [tableView dequeueReusableCellWithIdentifier:INVAudioListCellCellID];
     
     [cell configureCellWithModel:self.model.modelData[indexPath.row]];
     
@@ -77,11 +71,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     INVAudioListCellModel *cellModel = (INVAudioListCellModel *) self.model.modelData[indexPath.row];
-    
-    NSURL *url = cellModel.urlAudio;
-    [self playselectedsong:url];
-    
-//    [INVAudioService playSoundWithUrl: cell.model.urlAudio];
+
+    [AudioService playSoundWithUrl:cellModel.urlAudio];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -94,40 +85,6 @@
     
     INVAudioSingleVC *vc = segue.destinationViewController;
     vc.model = model;
-}
-
--(void)playselectedsong:(NSURL *)urString{
-    if(!self.songPlayer){
-    AVPlayer *player = [[AVPlayer alloc]initWithURL:urString];
-    self.songPlayer = player;
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(playerItemDidReachEnd:)
-//                                                 name:AVPlayerItemDidPlayToEndTimeNotification
-//                                               object:[self.songPlayer currentItem]];
-    [self.songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
-    }else{
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(playerItemDidReachEnd:)
-//                                                     name:AVPlayerItemDidPlayToEndTimeNotification
-//                                                   object:[self.songPlayer currentItem]];
-        
-        [self.songPlayer removeObserver:self forKeyPath:@"status"];
-        AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:urString];
-        
-        [self.songPlayer replaceCurrentItemWithPlayerItem:item];
-
-        [self.songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
-    }
-//    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
-    
-    
-    
-}
-
-- (void)playerItemDidReachEnd:(NSNotification *)notification {
-    
-    //  code here to play next sound file
-    
 }
 
 -(void)dealloc{

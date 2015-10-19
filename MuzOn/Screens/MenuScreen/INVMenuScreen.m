@@ -9,7 +9,7 @@
 #import "INVMenuScreen.h"
 #import "INVVKManager.h"
 #import <VK-ios-sdk/VKResponse.h>
-//#import "invaudi"
+#import "INVAudioListVC.h"
 
 @interface INVMenuScreen()
 
@@ -25,7 +25,18 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"%@", segue.identifier);
+    if ([segue.destinationViewController isKindOfClass:[INVAudioListVC class]] ){
+
+        INVAudioListVC *vc = segue.destinationViewController;
+        
+        if ( [segue.identifier isEqualToString:AudioFromDBSegueID] )
+        {
+            vc.loadingType = LoadingTypeFromDB;
+        }else if ([segue.identifier isEqualToString:AudioFromServerSegueID]){
+            vc.loadingType = LoadingTypeFromServer;
+        }
+    }
+
 }
 
 

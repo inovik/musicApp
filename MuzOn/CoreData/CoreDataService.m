@@ -35,7 +35,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:audioEntity];
     [fetchRequest setFetchBatchSize:50];
-    [fetchRequest setResultType:NSDictionaryResultType];
+//    [fetchRequest setResultType:NSDictionaryResultType];
     
     NSArray *audios = [context executeFetchRequest:fetchRequest error:nil];
     
@@ -44,17 +44,16 @@
 
 
 - (void)saveNewAudio:(INVAudioSingleModel *)model{
+    
+    NSString *filePath = [INVAudioSaver saveToDiskAudioWithURL:model.urlString title:[NSString stringWithFormat:@"%@-%@.mp3", model.artistAudio, model.titleAudio]];
+    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"INVAudio" inManagedObjectContext:self.managedObjectContext];
     
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:self.managedObjectContext];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:model.titleAudio forKey:@"titleAudio"];
-    [newManagedObject setValue:model.artistAudio forKey:@"artist"];
-    [newManagedObject setValue:[model.urlString absoluteString] forKey:@"urlFIle"];
-    
-    
+    INVAudio *audio = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:self.managedObjectContext];
+    audio.titleAudio = model.titleAudio;
+    audio.artist = model.artistAudio;
+    audio.urlFIle = filePath;
+    NSLog(@"---> %@", filePath);
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -63,8 +62,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
-//    [self loadAudio];
 }
 
 #pragma mark - Core Data stack

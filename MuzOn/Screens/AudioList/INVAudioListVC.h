@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, LoadingType) {
 };
 
 @interface INVAudioListVC : UIViewController
-@property (assign, nonatomic) LoadingType type;
+
+@property (assign, nonatomic) LoadingType loadingType;
 
 @end

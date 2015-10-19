@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3EED4ADFD63EA1DE84642582 /* libPods-MuzOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F074AE7BF2E39347503C64F4 /* libPods-MuzOn.a */; };
 		7A1885D11BD29ACD007E7DF7 /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1885D01BD29ACD007E7DF7 /* StoryboardConstants.m */; settings = {ASSET_TAGS = (); }; };
+		7A1885D91BD2A107007E7DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1885D71BD2A107007E7DF7 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7A1885DA1BD2A107007E7DF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1885D81BD2A107007E7DF7 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7A1885DE1BD2A25F007E7DF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1885DC1BD2A25F007E7DF7 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		7A1885E11BD2BC74007E7DF7 /* INVAudioSaver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1885E01BD2BC74007E7DF7 /* INVAudioSaver.m */; settings = {ASSET_TAGS = (); }; };
 		7A2FFDAE1BCB2C5F0073283B /* INVAudioSingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FFDAD1BCB2C5F0073283B /* INVAudioSingleModel.m */; settings = {ASSET_TAGS = (); }; };
 		7A2FFDB11BCB2C930073283B /* INVAudioSingleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2FFDB01BCB2C930073283B /* INVAudioSingleVC.m */; settings = {ASSET_TAGS = (); }; };
 		7ABC91A01BC9CE66004AFF01 /* INVAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC919F1BC9CE66004AFF01 /* INVAudioListCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -18,12 +22,9 @@
 		7ACC3FDD1BCA48430009011F /* INVAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC3FDB1BCA48430009011F /* INVAudio.m */; settings = {ASSET_TAGS = (); }; };
 		7ACC3FE11BCA4EEC0009011F /* INVAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC3FE01BCA4EEC0009011F /* INVAudioService.m */; settings = {ASSET_TAGS = (); }; };
 		7ACC3FE31BCA506F0009011F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ACC3FE21BCA506F0009011F /* AVFoundation.framework */; };
-		7AD0E4621BB376EB007B775B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0E4611BB376EB007B775B /* main.m */; };
 		7AD0E4651BB376EB007B775B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0E4641BB376EB007B775B /* AppDelegate.m */; };
-		7AD0E46B1BB376EB007B775B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0E4691BB376EB007B775B /* Main.storyboard */; };
 		7AD0E46E1BB376EB007B775B /* MuzOn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0E46C1BB376EB007B775B /* MuzOn.xcdatamodeld */; };
 		7AD0E4701BB376EB007B775B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0E46F1BB376EB007B775B /* Assets.xcassets */; };
-		7AD0E4731BB376EB007B775B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0E4711BB376EB007B775B /* LaunchScreen.storyboard */; };
 		7AD0E47E1BB376EB007B775B /* MuzOnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0E47D1BB376EB007B775B /* MuzOnTests.m */; };
 		7AD0E4891BB376EB007B775B /* MuzOnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0E4881BB376EB007B775B /* MuzOnUITests.m */; };
 		7AD3F6CF1BC9E1EF00DA8F66 /* INVMenuScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3F6CE1BC9E1EF00DA8F66 /* INVMenuScreen.m */; settings = {ASSET_TAGS = (); }; };
@@ -55,7 +56,12 @@
 		4B7FB4A977D298E5A6C65156 /* Pods-MuzOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuzOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuzOn/Pods-MuzOn.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1885CF1BD29ACD007E7DF7 /* StoryboardConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryboardConstants.h; path = Resource/Constants/StoryboardConstants.h; sourceTree = "<group>"; };
 		7A1885D01BD29ACD007E7DF7 /* StoryboardConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryboardConstants.m; path = Resource/Constants/StoryboardConstants.m; sourceTree = "<group>"; };
-		7A1885D31BD29CF8007E7DF7 /* MuzOn.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuzOn.pch; sourceTree = "<group>"; };
+		7A1885D71BD2A107007E7DF7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboard/Main.storyboard; sourceTree = "<group>"; };
+		7A1885D81BD2A107007E7DF7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboard/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A1885DC1BD2A25F007E7DF7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
+		7A1885DD1BD2A25F007E7DF7 /* MuzOn.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MuzOn.pch; path = "Supporting Files/MuzOn.pch"; sourceTree = "<group>"; };
+		7A1885DF1BD2BC74007E7DF7 /* INVAudioSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INVAudioSaver.h; path = AudioService/INVAudioSaver.h; sourceTree = "<group>"; };
+		7A1885E01BD2BC74007E7DF7 /* INVAudioSaver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INVAudioSaver.m; path = AudioService/INVAudioSaver.m; sourceTree = "<group>"; };
 		7A2FFDAC1BCB2C5F0073283B /* INVAudioSingleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INVAudioSingleModel.h; path = Screens/AudioSingle/INVAudioSingleModel.h; sourceTree = "<group>"; };
 		7A2FFDAD1BCB2C5F0073283B /* INVAudioSingleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INVAudioSingleModel.m; path = Screens/AudioSingle/INVAudioSingleModel.m; sourceTree = "<group>"; };
 		7A2FFDAF1BCB2C930073283B /* INVAudioSingleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INVAudioSingleVC.h; path = Screens/AudioSingle/INVAudioSingleVC.h; sourceTree = "<group>"; };
@@ -74,13 +80,10 @@
 		7ACC3FE01BCA4EEC0009011F /* INVAudioService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INVAudioService.m; path = AudioService/INVAudioService.m; sourceTree = "<group>"; };
 		7ACC3FE21BCA506F0009011F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7AD0E45D1BB376EB007B775B /* MuzOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AD0E4611BB376EB007B775B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AD0E4631BB376EB007B775B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AD0E4641BB376EB007B775B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7AD0E46A1BB376EB007B775B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AD0E46D1BB376EB007B775B /* MuzOn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuzOn.xcdatamodel; sourceTree = "<group>"; };
 		7AD0E46F1BB376EB007B775B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7AD0E4721BB376EB007B775B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AD0E4741BB376EB007B775B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD0E4791BB376EB007B775B /* MuzOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD0E47D1BB376EB007B775B /* MuzOnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuzOnTests.m; sourceTree = "<group>"; };
@@ -154,6 +157,15 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		7A1885D61BD2A0E7007E7DF7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7A1885D71BD2A107007E7DF7 /* Main.storyboard */,
+				7A1885D81BD2A107007E7DF7 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		7A2FFDAB1BCB2B980073283B /* AudioSingleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +182,8 @@
 			children = (
 				7ACC3FDF1BCA4EEC0009011F /* INVAudioService.h */,
 				7ACC3FE01BCA4EEC0009011F /* INVAudioService.m */,
+				7A1885DF1BD2BC74007E7DF7 /* INVAudioSaver.h */,
+				7A1885E01BD2BC74007E7DF7 /* INVAudioSaver.m */,
 			);
 			name = AudioService;
 			sourceTree = "<group>";
@@ -205,10 +219,9 @@
 				7AD3F6C51BC9E19000DA8F66 /* VKService */,
 				7AD0E4631BB376EB007B775B /* AppDelegate.h */,
 				7AD0E4641BB376EB007B775B /* AppDelegate.m */,
-				7AD0E4691BB376EB007B775B /* Main.storyboard */,
 				7AD0E46F1BB376EB007B775B /* Assets.xcassets */,
-				7AD0E4711BB376EB007B775B /* LaunchScreen.storyboard */,
 				7AD0E4741BB376EB007B775B /* Info.plist */,
+				7A1885D61BD2A0E7007E7DF7 /* Storyboard */,
 				7A1885CD1BD29A85007E7DF7 /* Resource */,
 				7AD0E4601BB376EB007B775B /* Supporting Files */,
 			);
@@ -218,8 +231,8 @@
 		7AD0E4601BB376EB007B775B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7AD0E4611BB376EB007B775B /* main.m */,
-				7A1885D31BD29CF8007E7DF7 /* MuzOn.pch */,
+				7A1885DC1BD2A25F007E7DF7 /* main.m */,
+				7A1885DD1BD2A25F007E7DF7 /* MuzOn.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -337,6 +350,7 @@
 				7AD0E45A1BB376EB007B775B /* Frameworks */,
 				7AD0E45B1BB376EB007B775B /* Resources */,
 				3D374B532C88A2AA19F42660 /* Copy Pods Resources */,
+				7A1885DB1BD2A13B007E7DF7 /* Generate Storyboard Constants */,
 			);
 			buildRules = (
 			);
@@ -432,9 +446,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD0E4731BB376EB007B775B /* LaunchScreen.storyboard in Resources */,
+				7A1885DA1BD2A107007E7DF7 /* LaunchScreen.storyboard in Resources */,
 				7AD0E4701BB376EB007B775B /* Assets.xcassets in Resources */,
-				7AD0E46B1BB376EB007B775B /* Main.storyboard in Resources */,
+				7A1885D91BD2A107007E7DF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +484,23 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MuzOn/Pods-MuzOn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7A1885DB1BD2A13B007E7DF7 /* Generate Storyboard Constants */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(PROJECT_NAME)/Storyboard/Main.storyboard",
+			);
+			name = "Generate Storyboard Constants";
+			outputPaths = (
+				"${SRCROOT}/$(PROJECT_NAME)/Resource/Constants/StoryboardConstants.h",
+				"${SRCROOT}/$(PROJECT_NAME)/Resource/Constants/StoryboardConstants.m",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python \"${SRCROOT}/Scripts/generate_constants.py\" \"${SCRIPT_OUTPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_1}\"";
+		};
 		FE6010C22ED7FDB4A2AA939D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,10 +526,10 @@
 				7AD0E4651BB376EB007B775B /* AppDelegate.m in Sources */,
 				7ACC3FD71BCA457A0009011F /* INVVKManager.m in Sources */,
 				7ACC3FDC1BCA48430009011F /* INVAudio+CoreDataProperties.m in Sources */,
-				7AD0E4621BB376EB007B775B /* main.m in Sources */,
 				7AD0E46E1BB376EB007B775B /* MuzOn.xcdatamodeld in Sources */,
 				7ACC3FE11BCA4EEC0009011F /* INVAudioService.m in Sources */,
 				7A1885D11BD29ACD007E7DF7 /* StoryboardConstants.m in Sources */,
+				7A1885DE1BD2A25F007E7DF7 /* main.m in Sources */,
 				7ABC91A01BC9CE66004AFF01 /* INVAudioListCell.m in Sources */,
 				7ABC91A31BC9CE85004AFF01 /* INVAudioListCellModel.m in Sources */,
 				7A2FFDB11BCB2C930073283B /* INVAudioSingleVC.m in Sources */,
@@ -506,6 +537,7 @@
 				7AD3F6CF1BC9E1EF00DA8F66 /* INVMenuScreen.m in Sources */,
 				7ACC3FDD1BCA48430009011F /* INVAudio.m in Sources */,
 				7AD3F6D51BC9E22A00DA8F66 /* INVAudioListModel.m in Sources */,
+				7A1885E11BD2BC74007E7DF7 /* INVAudioSaver.m in Sources */,
 				7AD3F6F51BC9EE0000DA8F66 /* CoreDataService.m in Sources */,
 				7AD3F6D41BC9E22A00DA8F66 /* INVAudioListVC.m in Sources */,
 			);
@@ -541,25 +573,6 @@
 			targetProxy = 7AD0E4851BB376EB007B775B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		7AD0E4691BB376EB007B775B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7AD0E46A1BB376EB007B775B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7AD0E4711BB376EB007B775B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7AD0E4721BB376EB007B775B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7AD0E48B1BB376EB007B775B /* Debug */ = {
@@ -649,6 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "MuzOn/Supporting Files/MuzOn.pch";
 				INFOPLIST_FILE = MuzOn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = INV.MuzOn;
@@ -665,6 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "MuzOn/Supporting Files/MuzOn.pch";
 				INFOPLIST_FILE = MuzOn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = INV.MuzOn;

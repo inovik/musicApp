@@ -1,12 +1,13 @@
 /* Generated document. DO NOT CHANGE */
-@class NSString;
 
 /* Segue identifier constants */
-extern NSString *const LoadFromServerSegueID;
-extern NSString *const LoadFromDBSegueID;
+@class NSString;
+
+extern NSString *const AudioFromDBSegueID;
+extern NSString *const AudioFromServerSegueID;
 
 /* Controller identifier constants */
+extern NSString *const MainNavigationControllerScreenID;
 
 /* Reuse identifier constants */
-extern NSString *const AudioCellID;
-
+extern NSString *const INVAudioListCellCellID;

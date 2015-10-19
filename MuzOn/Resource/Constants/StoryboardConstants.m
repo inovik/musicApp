@@ -2,8 +2,10 @@
 
 #import <Foundation/Foundation.h>
 
-NSString *const LoadFromServerSegueID = @"audioFromServer";
-NSString *const LoadFromDBSegueID = @"audioFromDB";
+NSString *const AudioFromDBSegueID = @"audioFromDB";
+NSString *const AudioFromServerSegueID = @"audioFromServer";
 
-NSString *const AudioCellID = @"INVAudioListCell";
+NSString *const MainNavigationControllerScreenID = @"mainNavigationController";
+
+NSString *const INVAudioListCellCellID = @"INVAudioListCell";
 
