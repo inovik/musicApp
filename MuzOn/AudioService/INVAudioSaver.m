@@ -11,8 +11,9 @@
 @implementation INVAudioSaver
 
 +(NSString *)saveToDiskAudioWithURL:(NSURL *)url title:(NSString *)title{
+    return [url absoluteString];
+    
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,true);
-//    NSString* sourceFilePath = [[NSBundle mainBundle] pathForResource:[title componentsSeparatedByString:@"."][0] ofType:@"mp3"];
     NSString* exportPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:title];
     
     @try {
@@ -21,7 +22,6 @@
             //Background Thread
             NSData* mainBundleFile = [NSData dataWithContentsOfURL:url];
             [[NSFileManager defaultManager] createFileAtPath:exportPath contents:mainBundleFile attributes:nil];
-            NSLog(@"Ring tone save OK");
         });
         
     }
